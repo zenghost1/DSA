@@ -1,6 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// count number of digits between a and b where digit d occurs exactly k times.
+// https://codeforces.com/blog/entry/53960
+// refer this blog
+
 int dp[100][2][100];
 
 void reset(){
@@ -38,7 +42,7 @@ void solve()
     reset();
     int upper = dfs(b,0,false,0,2,b.size(),1);
     reset();
-    int lower = dfs(a,0,false,0,3,a.size(),1);
+    int lower = dfs(a,0,false,0,2,a.size(),1);
     cout<< upper - lower << endl;
 }
 
